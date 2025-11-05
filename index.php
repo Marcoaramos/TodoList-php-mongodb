@@ -8,7 +8,7 @@ $tasks = $collection->find();
 <head>
   <meta charset="UTF-8">
   <title>Minha Lista de Tarefas</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
   <h1> Lista de Tarefas</h1>
@@ -24,8 +24,8 @@ $tasks = $collection->find();
     <?php foreach ($tasks as $task): ?>
       <li>
         <?= $task['title'] ?> - <strong><?= $task['status'] ?? 'pendente' ?></strong>
-        <a href="update.php?id=<?= $task['_id'] ?>">[Concluir]</a>
-        <a href="delete.php?id=<?= $task['_id'] ?>">[Excluir]</a>
+        <a href="update.php?id=<?= $task['_id'] ?>"><button>Concluir</button></a>
+        <a href="delete.php?id=<?= $task['_id'] ?>"><button>Excluir</button></a>
       </li>
     <?php endforeach; ?>
   </ul>
